@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Start a Project | West Orange Branding Company</title>
+<meta name="description" content="Tell West Orange Branding Company what you need branded. No product number or artwork required to get started.">
+<link rel="canonical" href="https://www.westorangebranding.com/start-a-project.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="West Orange Branding Company">
+<meta property="og:description" content="Tell West Orange Branding Company what you need branded. No product number or artwork required to get started.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@800;900&family=Archivo:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="site">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="West Orange Branding Company, home"><img src="logo-header.svg" alt="WO Branding Company" width="141" height="74"></a>
+    <ul class="nav-links"><li><a href="products.html">Products</a></li><li><a href="apparel.html">Apparel</a></li><li><a href="our-work.html">Our work</a></li><li><a href="about.html">About</a></li></ul>
+    <a class="btn btn-primary" href="start-a-project.html">Start a project</a>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <p class="marker">Start a project</p>
+    <h1 class="display">Tell us what you need.</h1>
+    <p class="lede">No product number or artwork needed. A few details are enough to get started, and “not sure yet” is a fine answer.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap form-grid">
+    <form class="project" id="project-form" novalidate>
+      <div class="field"><label for="pf-name">Your name</label><input id="pf-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="pf-org">Business or organization <span>(optional)</span></label><input id="pf-org" name="organization" type="text" autocomplete="organization"></div>
+      <div class="field"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="pf-phone">Phone <span>(optional)</span></label><input id="pf-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="field full"><label for="pf-interest">What are you interested in?</label>
+        <select id="pf-interest" name="interest">
+          <option>Not sure yet</option><option>Apparel</option><option>Hats</option><option>Promotional products</option><option>Drinkware</option><option>Print</option><option>Gifts and awards</option><option>Signs and displays</option><option>Something else</option>
+        </select></div>
+      <div class="field"><label for="pf-qty">Quantity <span>(if known)</span></label><input id="pf-qty" name="quantity" type="text" inputmode="numeric"></div>
+      <div class="field"><label for="pf-date">Needed by <span>(if known)</span></label><input id="pf-date" name="date" type="text" placeholder="e.g. mid November"></div>
+      <div class="field full"><label for="pf-budget">Budget <span>(optional)</span></label><input id="pf-budget" name="budget" type="text"></div>
+      <div class="field full"><label for="pf-details">Tell us about your project</label><textarea id="pf-details" name="details" required placeholder="What's it for? Who's it for? Whatever you know so far."></textarea></div>
+      <p class="status" id="form-status" role="status" aria-live="polite"></p>
+      <div class="form-foot">
+        <button class="btn btn-primary" type="submit">Send project details</button>
+        <p>This opens your email app with your details filled in. Nothing is sent until you press send there.</p>
+      </div>
+    </form>
+    <div class="side">
+      <h2>Prefer to talk?</h2>
+      <dl>
+        <dt>Call</dt><dd><a href="tel:+14078372823">(407) 837-2823</a></dd>
+        <dt>Email</dt><dd><a href="mailto:Info@westorangebranding.com">Info@westorangebranding.com</a></dd>
+      </dl>
+      <h2>What happens next</h2>
+      <ol>
+        <li>We read your details and reply with questions or product options.</li>
+        <li>We work out the product, decoration and a quote with you.</li>
+        <li>You approve it and we get it made.</li>
+      </ol>
+      
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var f=document.getElementById('project-form'), s=document.getElementById('form-status');
+  if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var g=function(id){return (document.getElementById(id).value||'').trim()};
+    if(!g('pf-name')||!g('pf-email')||!g('pf-details')){s.textContent='Please add your name, email and a few words about the project.';return}
+    var lines=['Name: '+g('pf-name'),'Business or organization: '+(g('pf-org')||'-'),'Email: '+g('pf-email'),'Phone: '+(g('pf-phone')||'-'),'Interested in: '+g('pf-interest'),'Quantity: '+(g('pf-qty')||'Not sure yet'),'Needed by: '+(g('pf-date')||'Not sure yet'),'Budget: '+(g('pf-budget')||'Not sure yet'),'','Project details:',g('pf-details')];
+    var href='mailto:Info@westorangebranding.com?subject='+encodeURIComponent('New project from '+g('pf-name'))+'&body='+encodeURIComponent(lines.join('\n'));
+    s.textContent='Your email app should open with these details filled in. Press send there to reach us. If nothing opens, email Info@westorangebranding.com or call (407) 837-2823.';
+    window.location.href=href;
+  });
+})();
+</script>
+</main>
+<footer class="dark">
+  <div class="wrap">
+    <img src="logo-footer.svg" alt="West Orange Branding Company" width="190" height="112">
+    <div>
+      <ul class="foot-links"><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="apparel.html">Apparel</a></li><li><a href="our-work.html">Our work</a></li><li><a href="about.html">About</a></li><li><a href="start-a-project.html">Start a project</a></li></ul>
+      <p>Rooted in West Orange: Winter Garden, Ocoee, Windermere, Oakland, Horizon West and Clermont.</p>
+      <p>&copy; 2026 West Orange Branding Company</p>
+    </div>
+  </div>
+</footer></div>
+</body>
+</html>
