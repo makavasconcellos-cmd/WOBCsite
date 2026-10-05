@@ -35,7 +35,12 @@
 
 <section>
   <div class="wrap form-grid">
-    <form class="project" id="project-form" novalidate>
+    <form class="project" id="project-form" action="https://formsubmit.co/info@westorangebranding.com" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="New project request from the WOBC website">
+      <input type="hidden" name="_next" value="https://www.westorangebranding.com/thanks.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="field"><label for="pf-name">Your name</label><input id="pf-name" name="name" type="text" autocomplete="name" required></div>
       <div class="field"><label for="pf-org">Business or organization <span>(optional)</span></label><input id="pf-org" name="organization" type="text" autocomplete="organization"></div>
       <div class="field"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" autocomplete="email" required></div>
@@ -48,16 +53,17 @@
       <div class="field"><label for="pf-date">Needed by <span>(if known)</span></label><input id="pf-date" name="date" type="text" placeholder="e.g. mid November"></div>
       <div class="field full"><label for="pf-budget">Budget <span>(optional)</span></label><input id="pf-budget" name="budget" type="text"></div>
       <div class="field full"><label for="pf-details">Tell us about your project</label><textarea id="pf-details" name="details" required placeholder="What's it for? Who's it for? Whatever you know so far."></textarea></div>
+      <div class="field full"><label for="pf-file">Logo or artwork <span>(optional, JPG, PNG or PDF, up to 5 MB)</span></label><input id="pf-file" name="attachment" type="file" accept=".jpg,.jpeg,.png,.pdf"></div>
       <p class="status" id="form-status" role="status" aria-live="polite"></p>
       <div class="form-foot">
         <button class="btn btn-primary" type="submit">Send project details</button>
-        <p>This opens your email app with your details filled in. Nothing is sent until you press send there.</p>
+        <p>Your details go straight to our inbox. We only use them to reply about your project.</p>
       </div>
     </form>
     <div class="side">
       <h2>Prefer to talk?</h2>
       <dl>
-        <dt>Call</dt><dd><a href="tel:+14078372823">(407) 837-2823</a></dd>
+        <dt>Call or text</dt><dd><a href="tel:+14078372823">(407) 837-2823</a></dd>
         <dt>Email</dt><dd><a href="mailto:Info@westorangebranding.com">Info@westorangebranding.com</a></dd>
       </dl>
       <h2>What happens next</h2>
@@ -70,21 +76,7 @@
     </div>
   </div>
 </section>
-<script>
-(function(){
-  var f=document.getElementById('project-form'), s=document.getElementById('form-status');
-  if(!f) return;
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var g=function(id){return (document.getElementById(id).value||'').trim()};
-    if(!g('pf-name')||!g('pf-email')||!g('pf-details')){s.textContent='Please add your name, email and a few words about the project.';return}
-    var lines=['Name: '+g('pf-name'),'Business or organization: '+(g('pf-org')||'-'),'Email: '+g('pf-email'),'Phone: '+(g('pf-phone')||'-'),'Interested in: '+g('pf-interest'),'Quantity: '+(g('pf-qty')||'Not sure yet'),'Needed by: '+(g('pf-date')||'Not sure yet'),'Budget: '+(g('pf-budget')||'Not sure yet'),'','Project details:',g('pf-details')];
-    var href='mailto:Info@westorangebranding.com?subject='+encodeURIComponent('New project from '+g('pf-name'))+'&body='+encodeURIComponent(lines.join('\n'));
-    s.textContent='Your email app should open with these details filled in. Press send there to reach us. If nothing opens, email Info@westorangebranding.com or call (407) 837-2823.';
-    window.location.href=href;
-  });
-})();
-</script>
+
 </main>
 <footer class="dark">
   <div class="wrap">

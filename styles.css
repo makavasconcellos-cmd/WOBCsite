@@ -207,3 +207,6 @@ footer p + p{margin-top:6px}
   form.project{grid-template-columns:minmax(0,1fr)}
   .actions .btn{flex:1 1 auto;text-align:center}
 }
+.field input[type=file]{padding:10px;background:var(--white)}
+.page-hero .actions{margin-top:28px}
+.lede a{color:var(--ink);font-weight:600}
