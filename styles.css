@@ -199,6 +199,8 @@ footer p + p{margin-top:6px}
   [id]{scroll-margin-top:150px}
 }
 @media (max-width:520px){
+  .nav-links{gap:6px 10px;flex-wrap:wrap}
+  .nav-links a{font-size:11px;letter-spacing:.04em}
   .brand img{height:58px}
   .site-header .btn{padding:12px 14px;font-size:12px}
   .tiles,.tiles.two-up,.cards,.cards.three{grid-template-columns:minmax(0,1fr)}
